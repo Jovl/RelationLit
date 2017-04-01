@@ -14,6 +14,8 @@ def func():
         json_data = json.loads(create_json)
         print(json_data)
         return json_data
+    else:
+        return 'hello'
 
 
 if __name__ == "__main__":
