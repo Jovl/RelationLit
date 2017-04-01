@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def func():
     if request.method == 'POST':
         likeData = request.data
