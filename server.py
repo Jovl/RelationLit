@@ -1,17 +1,19 @@
 from flask import Flask, request
+import requests
 import json
 import os
 
 app = Flask(__name__)
 
 
-@app.route('/')  # , methods=['POST']
+@app.route('/', methods=['POST'])
 def func():
-    # likeData = request.data
-    # create_json = json.dumps(likeData.json(), sort_keys=True, indent=4, separators=(',', ': '))
-    # json_data = json.loads(create_json)
-    # print(json_data)
-    return "Hello"
+    if request.method == 'POST':
+        likeData = request.data
+        create_json = json.dumps(likeData.json(), sort_keys=True, indent=4, separators=(',', ': '))
+        json_data = json.loads(create_json)
+        print(json_data)
+        return json_data
 
 
 if __name__ == "__main__":
