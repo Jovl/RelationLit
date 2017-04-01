@@ -13,4 +13,4 @@ def func():
 
 
 if __name__ == "__main__":
-    app.run()               # replace with host='0.0.0.0', port=80
+    app.run(host='0.0.0.0', port=80)
