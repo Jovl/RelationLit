@@ -4,12 +4,14 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/likes', methods=['POST'])
+@app.route('/likes')  # , methods=['POST']
 def func():
-    likeData = request.data
-    create_json = json.dumps(likeData.json(), sort_keys=True, indent=4, separators=(',', ': '))
-    json_data = json.loads(create_json)
-    print(json_data)
+    # likeData = request.data
+    # create_json = json.dumps(likeData.json(), sort_keys=True, indent=4, separators=(',', ': '))
+    # json_data = json.loads(create_json)
+    # print(json_data)
+
+    print("Hello")
 
 
 if __name__ == "__main__":
