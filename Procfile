@@ -1,1 +1,1 @@
-web: python RelationLit/server.py
+web: python server.py
