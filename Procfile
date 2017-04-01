@@ -1,1 +1,1 @@
-web: python dealscraper/server.py
+web: python RelationLit/server.py
