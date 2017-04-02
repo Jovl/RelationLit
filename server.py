@@ -14,12 +14,12 @@ def func():
         likeData = request.get_json()
         print likeData
         # create_json = json.dumps(likeData, sort_keys=True, indent=4, separators=(',', ': '))
-        # json_data = json.loads(create_json)
+        json_data = json.loads(likeData)
         # print(json_data)
 
         for i in range(5):
-            artistList.append(likeData["items"][i]["name"])
-            genreList.append(likeData["items"][i]["genres"])
+            artistList.append(json_data["items"][i]["name"])
+            genreList.append(json_data["items"][i]["genres"])
 
         return artistList, genreList
 
