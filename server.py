@@ -15,9 +15,9 @@ def func():
         json_data = json.loads(create_json)
         # print(json_data)
 
-        for i in range(4):
-            nameList[i] = json_data["items"][i]["name"]
-            genreList[i] = json_data["items"][i]["genres"]
+        for i in range(5):
+            nameList.append(json_data["items"][i]["name"])
+            genreList.append(json_data["items"][i]["genres"])
 
         print nameList
         print genreList
