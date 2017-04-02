@@ -11,10 +11,10 @@ def func():
     genreList = []
 
     if request.method == 'POST':
-        likeData = request.data
-        create_json = json.dumps(likeData.json(), sort_keys=True, indent=4, separators=(',', ': '))
+        likeData = request.get_json()
+        create_json = json.dumps(likeData, sort_keys=True, indent=4, separators=(',', ': '))
         json_data = json.loads(create_json)
-        print(json_data)
+        # print(json_data)
 
         for i in range(5):
             artistList.append(json_data["items"][i]["name"])
