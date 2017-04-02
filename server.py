@@ -99,16 +99,16 @@ def nodeMCU():
     username = request.args.get('username')
 
     if username == 'User1':
-        return cupID[0]
+        return str(cupID[0])
 
     elif username == 'User2':
-        return cupID[1]
+        return str(cupID[1])
 
     elif username == 'User3':
-        return cupID[2]
+        return str(cupID[2])
 
     elif username == 'User4':
-        return cupID[3]
+        return str(cupID[3])
 
 
 if __name__ == "__main__":
