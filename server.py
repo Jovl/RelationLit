@@ -11,6 +11,7 @@ likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
 nodeNames = []
 nodeLikes = []
+cupID = []
 
 @app.route('/', methods=['POST'])
 def func():
@@ -46,28 +47,66 @@ def func():
         users[curName] = sendList
 
         print(users)
+        print("Length of username string: %d" % len(userNames))
 
-        # if len(userNames) == 0:
-        #     # comparison time
-        #     for
+        if len(userNames) == 0:
+            # comparison time
+            count2 = 0
+            count3 = 0
+            count4 = 0
 
-        return curName
+            for item1 in users['User 1']:
+                for item2 in users['User 2']:
+                    if item1 == item2:
+                        count2 += 1
+
+            for item1 in users['User 1']:
+                for item3 in users['User 3']:
+                    if item1 == item3:
+                        count3 += 1
+
+            for item1 in users['User 1']:
+                for item4 in users['User 4']:
+                    if item1 == item4:
+                        count4 += 1
+
+            if count2 >= count3 and count2 >= count4:
+                cupID[0] = 1111
+                cupID[1] = 1111
+                cupID[2] = 2222
+                cupID[3] = 2222
+                return "User 1 + User 2 and User 3 + User 4"
+
+            elif count3 >= count4:
+                cupID[0] = 1111
+                cupID[1] = 2222
+                cupID[2] = 1111
+                cupID[3] = 2222
+                return "User 1 + User 3 and User 2 + User 4"
+
+            else:
+                cupID[0] = 1111
+                cupID[1] = 2222
+                cupID[2] = 2222
+                cupID[3] = 1111
+                return "User 1 + User 4 and User 2 + User 3"
+
 
 @app.route('/node')
 def nodeMCU():
     username = request.args.get('username')
 
-    # if username == 'User 1':
-    #     return cupID1
-    #
-    # elif username == 'User 2':
-    #     return cupID2
-    #
-    # elif username == 'User 3':
-    #     return cupID3
-    #
-    # elif username == 'User 4':
-    #     return cupID4
+    if username == 'User 1':
+        return cupID[0]
+
+    elif username == 'User 2':
+        return cupID[1]
+
+    elif username == 'User 3':
+        return cupID[2]
+
+    elif username == 'User 4':
+        return cupID[3]
 
 
 if __name__ == "__main__":
