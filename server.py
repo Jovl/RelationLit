@@ -32,7 +32,7 @@ def func():
             for item in row:
                 sendList.append(item)
 
-        users[userNames.pop()] = [sendList]
+        users[userNames.pop()] = sendList
         users[likeNums.pop()] = json_data["likes"]
 
         print(users)
