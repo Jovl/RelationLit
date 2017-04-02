@@ -9,6 +9,8 @@ app = Flask(__name__)
 userNames = ['User 4', 'User 3', 'User 2', 'User 1']
 likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
+nodeNames = []
+nodeLikes = []
 
 @app.route('/', methods=['POST'])
 def func():
@@ -32,8 +34,14 @@ def func():
             for item in row:
                 sendList.append(item)
 
-        users[userNames.pop()] = sendList
-        users[likeNums.pop()] = json_data["likes"]
+        curName = userNames.pop()
+        nodeNames.append(curName)
+
+        curLikeNum = likeNums.pop()
+        nodeLikes.append(curLikeNum)
+
+        users[curName] = sendList
+        users[curLikeNum] = json_data["likes"]
 
         print(users)
 
@@ -42,7 +50,7 @@ def func():
 
 @app.route('/node')
 def nodeMCU():
-
+    
     return
 
 if __name__ == "__main__":
