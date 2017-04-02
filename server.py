@@ -91,6 +91,8 @@ def func():
                 cupID[3] = 1111
                 return "User 1 + User 4 and User 2 + User 3"
 
+    return curName
+
 
 @app.route('/node')
 def nodeMCU():
