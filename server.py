@@ -3,7 +3,7 @@ import json
 import os
 
 users = {}
-cupID = []
+cupID = {}
 app = Flask(__name__)
 # connect('RelationLitDB')
 
@@ -12,6 +12,7 @@ likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
 nodeNames = []
 nodeLikes = []
+
 
 @app.route('/', methods=['POST'])
 def func():
@@ -71,24 +72,24 @@ def func():
                         count4 += 1
 
             if count2 >= count3 and count2 >= count4:
-                cupID.append(1111)
-                cupID.append(1112)
-                cupID.append(2223)
-                cupID.append(2224)
+                cupID["1"] = "1111"
+                cupID["2"] = "1112"
+                cupID["3"] = "2223"
+                cupID["4"] = "2224"
                 return "User 1 + User 2 and User 3 + User 4"
 
             elif count3 >= count4:
-                cupID.append(1111)
-                cupID.append(2222)
-                cupID.append(1113)
-                cupID.append(2224)
+                cupID["1"] = "1111"
+                cupID["2"] = "2222"
+                cupID["3"] = "1113"
+                cupID["4"] = "2224"
                 return "User 1 + User 3 and User 2 + User 4"
 
             else:
-                cupID.append(1111)
-                cupID.append(2222)
-                cupID.append(2223)
-                cupID.append(1114)
+                cupID["1"] = "1111"
+                cupID["2"] = "2222"
+                cupID["3"] = "2223"
+                cupID["4"] = "1114"
                 return "User 1 + User 4 and User 2 + User 3"
 
     return curName
@@ -99,16 +100,16 @@ def nodeMCU():
     username = request.args.get('username')
 
     if username == 'User1':
-        return str(cupID[0])
+        return cupID["1"]
 
     elif username == 'User2':
-        return str(cupID[1])
+        return cupID["2"]
 
     elif username == 'User3':
-        return str(cupID[2])
+        return cupID["3"]
 
     elif username == 'User4':
-        return str(cupID[3])
+        return cupID["4"]
 
 
 if __name__ == "__main__":
