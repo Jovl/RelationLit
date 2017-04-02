@@ -15,8 +15,7 @@ def func():
         # print(json_data)
 
         #for data in json_data:
-
-
+        print json_data["items"][0]["name"]
         return json_data["items"][0]["name"]
 
 
