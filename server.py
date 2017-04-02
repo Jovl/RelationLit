@@ -6,14 +6,13 @@ users = {}
 app = Flask(__name__)
 # connect('RelationLitDB')
 
-userNames = ['User 1', 'User 2', 'User 3', 'User 4']
+userNames = ['User 4', 'User 3', 'User 2', 'User 1']
 
 
 @app.route('/', methods=['POST'])
 def func():
     nameList = []
     genreList = []
-    likeList = []
 
     if request.method == 'POST':
         likeData = request.get_json()
@@ -24,11 +23,18 @@ def func():
             nameList.append(json_data["items"][i]["name"])
             genreList.append(json_data["items"][i]["genres"])
 
-        users[userNames.pop()] = [nameList, genreList, {"likes": json_data["likes"]}]
+        users[userNames.pop()] = [nameList, genreList]
+        users["likes"] = json_data["likes"]
 
         print(users)
 
     return "All Good"
+
+
+@app.route('/node')
+def nodeMCU():
+    
+    return
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
