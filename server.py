@@ -72,23 +72,23 @@ def func():
 
             if count2 >= count3 and count2 >= count4:
                 cupID[0] = 1111
-                cupID[1] = 1111
-                cupID[2] = 2222
-                cupID[3] = 2222
+                cupID[1] = 1112
+                cupID[2] = 2223
+                cupID[3] = 2224
                 return "User 1 + User 2 and User 3 + User 4"
 
             elif count3 >= count4:
                 cupID[0] = 1111
                 cupID[1] = 2222
-                cupID[2] = 1111
-                cupID[3] = 2222
+                cupID[2] = 1113
+                cupID[3] = 2224
                 return "User 1 + User 3 and User 2 + User 4"
 
             else:
                 cupID[0] = 1111
                 cupID[1] = 2222
-                cupID[2] = 2222
-                cupID[3] = 1111
+                cupID[2] = 2223
+                cupID[3] = 1114
                 return "User 1 + User 4 and User 2 + User 3"
 
     return curName
