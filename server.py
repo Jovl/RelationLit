@@ -25,9 +25,8 @@ def func():
             nameList.append(json_data["items"][i]["name"])
             genreList.append(json_data["items"][i]["genres"])
 
-        for row in nameList:
-            for item in row:
-                sendList.append(item)
+        for item in nameList:
+            sendList.append(item)
 
         for row in genreList:
             for item in row:
