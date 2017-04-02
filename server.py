@@ -13,6 +13,7 @@ likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 def func():
     nameList = []
     genreList = []
+    sendList = []
 
     if request.method == 'POST':
         likeData = request.get_json()
@@ -22,6 +23,14 @@ def func():
         for i in range(5):
             nameList.append(json_data["items"][i]["name"])
             genreList.append(json_data["items"][i]["genres"])
+
+        for row in nameList:
+            for item in row:
+                sendList.append(item)
+
+        for row in genreList:
+            for item in row:
+                sendList.append(item)
 
         users[userNames.pop()] = [nameList, genreList]
         users[likeNums.pop()] = json_data["likes"]
