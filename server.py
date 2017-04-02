@@ -11,7 +11,7 @@ likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
 nodeNames = []
 nodeLikes = []
-cupID = []
+cupID = [None]*4
 
 @app.route('/', methods=['POST'])
 def func():
