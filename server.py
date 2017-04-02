@@ -24,8 +24,7 @@ def func():
             nameList.append(json_data["items"][i]["name"])
             genreList.append(json_data["items"][i]["genres"])
 
-        likeList.append(json_data["items"]["likes"])
-        users[userNames.pop()] = [nameList, genreList, likeList]
+        users[userNames.pop()] = [nameList, genreList, {"likes": json_data["likes"]}]
 
         print(users)
 
