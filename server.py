@@ -16,7 +16,6 @@ def func():
 
         #for data in json_data:
         print json_data["items"][0]["name"]
-        return json_data["items"][0]["name"]
 
 
 if __name__ == "__main__":
