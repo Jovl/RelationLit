@@ -34,6 +34,9 @@ def func():
             for item in row:
                 sendList.append(item)
 
+        for item in json_data["likes"]:
+            sendList.append(item)
+
         curName = userNames.pop()
         nodeNames.append(curName)
 
@@ -41,17 +44,31 @@ def func():
         nodeLikes.append(curLikeNum)
 
         users[curName] = sendList
-        users[curLikeNum] = json_data["likes"]
 
         print(users)
 
-    return "All Good"
+        # if len(userNames) == 0:
+        #     # comparison time
+        #     for
 
+        return curName
 
 @app.route('/node')
 def nodeMCU():
-    
-    return
+    username = request.args.get('username')
+
+    # if username == 'User 1':
+    #     return cupID1
+    #
+    # elif username == 'User 2':
+    #     return cupID2
+    #
+    # elif username == 'User 3':
+    #     return cupID3
+    #
+    # elif username == 'User 4':
+    #     return cupID4
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
