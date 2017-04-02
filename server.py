@@ -72,24 +72,24 @@ def func():
                         count4 += 1
 
             if count2 >= count3 and count2 >= count4:
-                cupID["1"] = "1111"
-                cupID["2"] = "1112"
-                cupID["3"] = "2223"
-                cupID["4"] = "2224"
+                cupID["1"] = "1112"
+                cupID["2"] = "1111"
+                cupID["3"] = "2224"
+                cupID["4"] = "2223"
                 return "User 1 + User 2 and User 3 + User 4"
 
             elif count3 >= count4:
-                cupID["1"] = "1111"
-                cupID["2"] = "2222"
-                cupID["3"] = "1113"
-                cupID["4"] = "2224"
+                cupID["1"] = "1113"
+                cupID["2"] = "2224"
+                cupID["3"] = "1111"
+                cupID["4"] = "2222"
                 return "User 1 + User 3 and User 2 + User 4"
 
             else:
-                cupID["1"] = "1111"
-                cupID["2"] = "2222"
-                cupID["3"] = "2223"
-                cupID["4"] = "1114"
+                cupID["1"] = "1114"
+                cupID["2"] = "2223"
+                cupID["3"] = "2222"
+                cupID["4"] = "1111"
                 return "User 1 + User 4 and User 2 + User 3"
 
     return curName
