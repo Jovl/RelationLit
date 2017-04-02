@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def func():
-
+    nameList = []
+    genreList = []
     if request.method == 'POST':
         likeData = request.get_json()
         create_json = json.dumps(likeData, sort_keys=True, indent=4, separators=(',', ': '))
@@ -15,8 +16,11 @@ def func():
         # print(json_data)
 
         for i in range(5):
-            json_data["items"][0]["name"]
-            json_data["items"][0]["genres"]
+            nameList[i] = json_data["items"][i]["name"]
+            genreList[i] = json_data["items"][i]["genres"]
+
+        print nameList
+        print genreList
 
     return "All Good"
 
