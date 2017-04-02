@@ -3,6 +3,7 @@ import json
 import os
 
 users = {}
+cupID = []
 app = Flask(__name__)
 # connect('RelationLitDB')
 
@@ -11,7 +12,6 @@ likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
 nodeNames = []
 nodeLikes = []
-cupID = []
 
 @app.route('/', methods=['POST'])
 def func():
