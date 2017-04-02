@@ -9,6 +9,7 @@ app = Flask(__name__)
 userNames = ['User 4', 'User 3', 'User 2', 'User 1']
 likeNums = ['Likes 4', 'Likes 3', 'Likes 2', 'Likes 1']
 
+
 @app.route('/', methods=['POST'])
 def func():
     nameList = []
@@ -32,7 +33,7 @@ def func():
             for item in row:
                 sendList.append(item)
 
-        users[userNames.pop()] = [nameList, genreList]
+        users[userNames.pop()] = [sendList]
         users[likeNums.pop()] = json_data["likes"]
 
         print(users)
