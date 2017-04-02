@@ -12,6 +12,7 @@ def func():
 
     if request.method == 'POST':
         likeData = request.get_json()
+        print likeData
         # create_json = json.dumps(likeData, sort_keys=True, indent=4, separators=(',', ': '))
         # json_data = json.loads(create_json)
         # print(json_data)
