@@ -14,9 +14,11 @@ def func():
         json_data = json.loads(create_json)
         # print(json_data)
 
-        #for data in json_data:
-        print json_data["items"][0]["name"]
+        for i in range(5):
+            json_data["items"][0]["name"]
+            json_data["items"][0]["genres"]
 
+    return "All Good"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
